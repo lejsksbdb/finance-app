@@ -1,0 +1,62 @@
+.home {
+  padding: 16px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 8px;
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.card span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.card strong {
+  font-size: 20px;
+}
+
+.income {
+  border-left: 6px solid #2ecc71;
+}
+
+.expense {
+  border-left: 6px solid #e74c3c;
+}
+
+.total {
+  border-left: 6px solid #3498db;
+}
+
+.transactions {
+  list-style: none;
+  padding: 0;
+}
+
+.transactions li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #f4f4f4;
+  border-radius: 6px;
+}
+
+.transactions li.income {
+  border-left: 4px solid #2ecc71;
+}
+
+.transactions li.expense {
+  border-left: 4px solid #e74c3c;
+}
