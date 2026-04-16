@@ -1,0 +1,215 @@
+# 📘 Documento Técnico — Sistema de Gestão Financeira Pessoal
+
+---
+
+## 🧩 1. Introdução
+
+Este documento técnico descreve a arquitetura, funcionalidades, tecnologias e roadmap do Sistema de Gestão Financeira Pessoal em desenvolvimento. O objetivo do sistema é fornecer uma solução eficiente para controle, análise e organização das finanças pessoais do usuário.
+
+---
+
+## 🎯 2. Objetivo do Sistema
+
+O sistema tem como finalidade:
+
+* Registrar receitas e despesas
+* Controlar saldo financeiro em tempo real
+* Organizar dados financeiros por categorias
+* Auxiliar na tomada de decisões financeiras
+* Servir como base para futuras automações bancárias
+
+---
+
+## 🏗️ 3. Arquitetura do Sistema
+
+### 3.1 Tipo de Aplicação
+
+* Aplicação Web (SPA - Single Page Application)
+
+### 3.2 Estrutura Arquitetural
+
+* Arquitetura baseada em componentes (React)
+* Gerenciamento de estado global via Context API
+* Separação por camadas:
+
+  * Interface (UI)
+  * Lógica de negócio
+  * Tipagem de dados
+
+---
+
+## 💻 4. Stack Tecnológica
+
+| Camada        | Tecnologia  | Finalidade                    |
+| ------------- | ----------- | ----------------------------- |
+| Linguagem     | TypeScript  | Tipagem e segurança do código |
+| Frontend      | React       | Construção da interface       |
+| Build Tool    | Vite        | Build e execução do projeto   |
+| Estado Global | Context API | Gerenciamento de dados        |
+
+---
+
+## 🗄️ 5. Modelagem de Dados
+
+### 5.1 Transaction (Transações)
+
+| Campo       | Tipo   | Descrição              |
+| ----------- | ------ | ---------------------- |
+| id          | string | Identificador único    |
+| description | string | Descrição da transação |
+| amount      | number | Valor da transação     |
+| type        | string | 'income' ou 'expense'  |
+| category    | string | Categoria              |
+| date        | string | Data da transação      |
+
+---
+
+### 5.2 FixedExpense (Contas Fixas)
+
+| Campo    | Tipo   | Descrição         |
+| -------- | ------ | ----------------- |
+| name     | string | Nome da despesa   |
+| amount   | number | Valor             |
+| dueDate  | number | Dia de vencimento |
+| category | string | Categoria         |
+
+---
+
+### 5.3 Savings (Poupança)
+
+| Campo  | Tipo   | Descrição         |
+| ------ | ------ | ----------------- |
+| month  | string | Mês de referência |
+| amount | number | Valor guardado    |
+| notes  | string | Observações       |
+
+---
+
+### 5.4 MonthlyBalance (Saldo Mensal)
+
+| Campo        | Tipo   | Descrição         |
+| ------------ | ------ | ----------------- |
+| totalIncome  | number | Total de receitas |
+| totalExpense | number | Total de despesas |
+| balance      | number | Saldo final       |
+
+---
+
+## ⚙️ 6. Funcionalidades Implementadas
+
+### 6.1 Gestão de Transações
+
+* Cadastro de receitas e despesas
+* Listagem de transações
+* Identificação por tipo (entrada/saída)
+
+### 6.2 Cálculo de Saldo
+
+* Soma automática de receitas
+* Soma automática de despesas
+* Cálculo do saldo final
+
+### 6.3 Interface do Usuário
+
+* Dashboard básico
+* Lista de transações
+* Diferenciação visual por tipo
+
+### 6.4 Gerenciamento de Estado
+
+* Uso de Context API para centralização de dados
+* Atualização dinâmica da interface
+
+---
+
+## 🔄 7. Fluxo de Funcionamento
+
+1. Usuário adiciona uma transação
+2. Dados são enviados para o Context
+3. Estado global é atualizado
+4. Interface é re-renderizada automaticamente
+5. Totais são recalculados em tempo real
+
+---
+
+## 🚧 8. Pendências e Evolução do Sistema
+
+### 8.1 Persistência de Dados
+
+* Implementação de LocalStorage ou banco de dados
+* Sincronização de dados
+
+### 8.2 Visualização de Dados
+
+* Gráficos (pizza, linha, barras)
+* Dashboards analíticos
+
+### 8.3 Orçamento Financeiro
+
+* Limite por categoria
+* Alertas de gasto
+
+### 8.4 Integração Bancária
+
+* Leitura de notificações
+* Importação automática de transações
+
+### 8.5 Controle de Cartão de Crédito
+
+* Parcelamento
+* Fatura mensal
+
+### 8.6 Relatórios
+
+* Exportação em PDF
+* Relatórios mensais automatizados
+
+### 8.7 UX/UI
+
+* Design responsivo
+* Tema escuro/claro
+* Melhorias visuais
+
+---
+
+## 🔐 9. Considerações de Segurança
+
+* Validação de dados de entrada
+* Preparação para autenticação de usuários
+* Possibilidade futura de criptografia de dados sensíveis
+
+---
+
+## 📈 10. Escalabilidade
+
+O sistema foi estruturado para permitir:
+
+* Integração com APIs externas
+* Evolução para backend dedicado
+* Migração para arquitetura mais robusta (ex: microserviços)
+
+---
+
+## 🎯 11. Conclusão
+
+O sistema encontra-se em estágio avançado de desenvolvimento, com funcionalidades essenciais implementadas e arquitetura adequada para evolução.
+
+Com a implementação das melhorias planejadas, o projeto tem potencial para se tornar um **sistema financeiro completo e profissional**, com automações, inteligência financeira e integração com serviços externos.
+
+---
+
+## 🚀 12. Roadmap Técnico
+
+| Etapa | Descrição              | Prioridade |
+| ----- | ---------------------- | ---------- |
+| 1     | Persistência de dados  | Alta       |
+| 2     | Gráficos financeiros   | Alta       |
+| 3     | Melhorias de interface | Média      |
+| 4     | Relatórios em PDF      | Média      |
+| 5     | Integração bancária    | Alta       |
+
+---
+
+📌 **Status do Projeto:** 70% concluído
+📌 **Nível:** Intermediário → Avançado
+📌 **Potencial:** Produto escalável e comercializável
